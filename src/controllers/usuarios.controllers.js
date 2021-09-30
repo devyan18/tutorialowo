@@ -48,7 +48,7 @@ const editarUsuario = async(req, res) => {
 
 const eliminarUsuario = async(req, res) => {
   try {
-    await Usuarios.findByIdAndUpdate(req.params.id, { estado: false })
+    await Usuarios.findByIdAndUpdate(req.body.id, { estado: false })
     res.status(203).json('Usuario Desactivado Correctamente')
   } catch (err) {
     console.error('Hubo un error en el controlador de eliminarUsuario', err)
